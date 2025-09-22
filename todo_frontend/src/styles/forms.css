@@ -1,0 +1,23 @@
+.form {
+  display: grid; gap: var(--spacing-4);
+}
+.form-row {
+  display: grid; gap: var(--spacing-2);
+}
+.form-actions {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-3);
+}
+.helper { font-size: 12px; color: var(--color-muted); }
+.error { color: var(--color-error); font-size: 13px; }
+.centered {
+  max-width: 420px; margin: 48px auto; padding: var(--spacing-6);
+}
+.page-title {
+  margin: 0 0 var(--spacing-2); font-weight: 800; letter-spacing: .2px;
+}
+.page-subtitle {
+  margin: 0 0 var(--spacing-5); color: var(--color-muted);
+}
+.split {
+  display: flex; gap: var(--spacing-3); flex-wrap: wrap;
+}

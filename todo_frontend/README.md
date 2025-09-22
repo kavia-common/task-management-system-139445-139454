@@ -1,82 +1,55 @@
-# Lightweight React Template for KAVIA
+# Corporate Navy Todo Frontend (React)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A classic, professional todo management UI with authentication (JWT), filters sidebar, and CRUD features. Styled using a corporate navy palette (navy blue with gold accents), built with React, React Router, and Context for state.
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Auth: Login, Register, Logout with JWT stored in localStorage
+- Todos: List, Create, Update, Delete
+- Filters: Search, status, and priority filters in a sidebar
+- Layout: Header (brand + auth actions), Sidebar, Content, Footer
+- Styling: Pure CSS using CSS variables (no heavy UI frameworks)
+- Docs & Comments: Public interfaces documented throughout the code
 
-## Getting Started
+## Quick Start
 
-In the project directory, you can run:
+1) Install dependencies
+   npm install
 
-### `npm start`
+2) Configure API base URL
+   - Copy .env.example to .env and set REACT_APP_API_BASE to your backend URL (e.g. http://localhost:3001)
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3) Run the app
+   npm start
 
-### `npm test`
+Open http://localhost:3000
 
-Launches the test runner in interactive watch mode.
+## Project Structure
 
-### `npm run build`
+- src/api/*           - API client and endpoint wrappers
+- src/state/*         - React Context for auth and todos
+- src/components/*    - Reusable components (Header, Sidebar, forms, etc.)
+- src/pages/*         - Page-level components
+- src/styles/*        - Theme, layout, and form CSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Theming
 
-## Customization
+Corporate Navy theme is defined in src/styles/theme.css using CSS variables:
+- Primary: #1E3A8A (navy)
+- Secondary: #F59E0B (gold)
+- Background, surfaces, borders, shadows and radii are centralized for consistency.
 
-### Colors
+Toggle light/dark theme using the header button. Preference is saved to localStorage.
 
-The main brand colors are defined as CSS variables in `src/App.css`:
+## Environment Variables
 
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
+- REACT_APP_API_BASE: Base URL of backend (e.g., http://localhost:3001)
 
-### Components
+Note: Do not commit secrets. Only define and use env variables through .env mapped by your orchestrator.
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+## Notes
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+- All public functions are marked with PUBLIC_INTERFACE and documented.
+- Error handling provides user-visible messages where appropriate.
+- ID handling is flexible: supports id, _id, or uuid fields.
 
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
